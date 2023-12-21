@@ -14,16 +14,24 @@ const HandleEvents = () => {
     console.log(e);
     if (e.target.innerText !== selected.emoji) {
       alert("wrong emoji");
-    } else if (e.timeStamp > 5000) {
+    } else if (e.timeStamp > 10000) {
       alert("Too Slow. Reset and try again");
     } else {
       alert("🍗 Winner! Winner Chicken Dinner 🍗");
     }
   };
+
+  const resetHandle = () => {
+    window.location.reload();
+  };
   return (
     <div>
       <h1>{selected.emoji}</h1>
       <p>copy this emoji</p>
+      <p>
+        When user select and click copy within given time it should match the
+        selected emoji {selected.emoji}{" "}
+      </p>
       <ul>
         {emojis.map(({ id, emoji }) => {
           return (
@@ -33,7 +41,7 @@ const HandleEvents = () => {
           );
         })}
       </ul>
-      <button>Reset</button>
+      <button onClick={resetHandle}>Reset</button>
     </div>
   );
 };
