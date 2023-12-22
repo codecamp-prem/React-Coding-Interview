@@ -1,10 +1,9 @@
-import "./App.css";
-import { Pomodoro } from "./Pomodoro";
+import { MarkdownEditor } from "./MarkdownEditor";
 
 function App() {
   return (
     <>
-      <Pomodoro />
+      <MarkdownEditor />
     </>
   );
 }
