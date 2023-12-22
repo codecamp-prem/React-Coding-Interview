@@ -1,5 +1,5 @@
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js"; // this change to html text
-import Markdown from "https://esm.sh/react-markdown@9?bundle"; // use this React component to render markdown. this parse to html from html text.
+import Markdown from "https://esm.sh/react-markdown@9?bundle"; // use this React component to render markdown. this parse to html from html text. go to https://www.npmjs.com/package/react-markdown to install
 import { useState } from "react";
 import "./markdownEditor.css";
 // TypeScript Type
