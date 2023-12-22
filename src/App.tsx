@@ -1,12 +1,10 @@
 import "./App.css";
-import Todo from "./Todo";
+import { Pomodoro } from "./Pomodoro";
 
 function App() {
   return (
     <>
-      <div className="card">
-        <Todo />
-      </div>
+      <Pomodoro />
     </>
   );
 }
