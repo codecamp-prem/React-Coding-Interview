@@ -1,6 +1,10 @@
 import { useState } from "react";
+import useWindowSize from "./useWindowSize";
 
 const TipCalculator = () => {
+  const windowSize = useWindowSize();
+  console.log(windowSize);
+
   const [bill, setBill] = useState(100);
   const [tipPercent, setTipPercent] = useState(18);
   const [payee, setPayee] = useState(1);
@@ -21,7 +25,12 @@ const TipCalculator = () => {
 
   return (
     <>
-      <div className="outerDiv" style={styles.outerDiv}>
+      <div
+        className="outerDiv"
+        style={
+          windowSize.width! >= 600 ? styles.desktopStyle : styles.mobileStyle
+        }
+      >
         <label htmlFor="bill">Bill: </label>
         <input
           id="bill"
@@ -75,13 +84,21 @@ const TipCalculator = () => {
 };
 
 const styles = {
-  outerDiv: {
-    backgroundColor: "#f1f1f1",
+  desktopStyle: {
+    backgroundColor: "#ba3b50",
     width: "70%",
     display: "flex",
     flexDirection: "column",
     padding: "10px",
     margin: "5% 15% 0 15%",
+  },
+  mobileStyle: {
+    backgroundColor: "#f4f4f4",
+    width: "40%",
+    display: "flex",
+    flexDirection: "column",
+    padding: "10px",
+    margin: "15% 25% 0 25%",
   },
 } as const;
 
