@@ -1,9 +1,9 @@
-import { MarkdownEditor } from "./MarkdownEditor";
+import { PhoneInput } from "./PhoneInput";
 
 function App() {
   return (
     <>
-      <MarkdownEditor />
+      <PhoneInput />
     </>
   );
 }
