@@ -1,9 +1,9 @@
-import { PhoneInput } from "./PhoneInput";
+import { TipCalculator } from "./TipCalculator";
 
 function App() {
   return (
     <>
-      <PhoneInput />
+      <TipCalculator />
     </>
   );
 }
