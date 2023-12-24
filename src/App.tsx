@@ -1,9 +1,9 @@
-import { TipCalculator } from "./TipCalculator";
+import { Tab } from "./Tab";
 
 function App() {
   return (
     <>
-      <TipCalculator />
+      <Tab />
     </>
   );
 }
