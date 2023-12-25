@@ -1,31 +1,20 @@
 import { useEffect, useState } from "react";
+import DisplayResult from "./DisplayResult";
+import MainUi from "./MainUi";
+import ScoreStats from "./ScoreStats";
+import { ChoiceType, gameChoices } from "./commonType";
 import "./rockpaper.css";
-import Rock from "./svgs/Rock";
-import Scissors from "./svgs/Scissors";
-import Paper from "./svgs/paper";
-
-const choices = [
-  { id: 1, name: "rock", component: Rock, losesTo: 2 },
-  { id: 2, name: "paper", component: Paper, losesTo: 3 },
-  { id: 3, name: "scissors", component: Scissors, losesTo: 1 },
-];
-
-type Choice = {
-  id: number;
-  name: string;
-  component: () => JSX.Element;
-  losesTo: number;
-};
 
 const RockPaper = () => {
-  const [userChoice, setUserChoice] = useState<Choice>();
-  const [computerChoice, setComputerChoice] = useState<Choice>();
+  const [userChoice, setUserChoice] = useState<ChoiceType>();
+  const [computerChoice, setComputerChoice] = useState<ChoiceType>();
   const [wins, setWins] = useState(0);
   const [losses, setLosses] = useState(0);
   const [gameState, setGameState] = useState<string | undefined>();
 
   const handleRestartGame = () => {
-    const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+    const randomChoice =
+      gameChoices[Math.floor(Math.random() * gameChoices.length)];
     setComputerChoice(randomChoice);
     setGameState(undefined);
     setUserChoice(undefined);
@@ -35,8 +24,8 @@ const RockPaper = () => {
     handleRestartGame();
   }, []);
 
-  const handleUserChoice = (choice: number) => {
-    const userClickedChoice = choices.find((c) => c.id === choice);
+  const handleUserChoice = (choosenId: number) => {
+    const userClickedChoice = gameChoices.find((c) => c.id === choosenId);
     setUserChoice(userClickedChoice);
 
     // determine the winner, loser or draw
@@ -54,7 +43,7 @@ const RockPaper = () => {
     }
   };
 
-  const renderComponent = (choice: Choice) => {
+  const renderComponent = (choice: ChoiceType) => {
     const DynamicComponent = choice.component;
     return <DynamicComponent />;
   };
@@ -66,64 +55,25 @@ const RockPaper = () => {
         <h2>Rock. Paper. Scissors</h2>
 
         {/* wins vs losses stats */}
-        <div className="wins-losses">
-          <div className="wins">
-            <span className="number">{wins}</span>
-            <span className="text">{wins === 1 ? "Win" : "Wins"}</span>
-          </div>
-
-          <div className="losses">
-            <span className="number">{losses}</span>
-            <span className="text">{losses === 1 ? "Loss" : "Losses"}</span>
-          </div>
-        </div>
+        <ScoreStats wins={wins} losses={losses} />
       </div>
 
       {/* the popup to show win/lose/draw-3 game state option */}
       {gameState != undefined && (
-        <div className={`game-state ${gameState}`}>
-          <div>
-            <div className="game-state-content">
-              <p>{renderComponent(userChoice!)}</p>
-              <p>you {gameState}!</p>
-              <p>{renderComponent(computerChoice!)}</p>
-            </div>
-            {(gameState === "win" || gameState === "lose") && (
-              <p className="game-result-info">
-                {`${userChoice?.name} ${gameState} to ${computerChoice?.name}`}
-              </p>
-            )}
-            <button onClick={handleRestartGame}>Play Again</button>
-          </div>
-        </div>
+        <DisplayResult
+          gameState={gameState}
+          renderComponent={renderComponent}
+          userChoice={userChoice!}
+          computerChoice={computerChoice!}
+          handleRestartGame={handleRestartGame}
+        />
       )}
 
-      <div className="choices">
-        {/* choices captions */}
-        <div>You</div>
-        <div />
-        <div>Computer</div>
-
-        {/* buttons for my choice */}
-        <div>
-          <button className="rock" onClick={() => handleUserChoice(1)}>
-            <Rock />
-          </button>
-          <button className="paper" onClick={() => handleUserChoice(2)}>
-            <Paper />
-          </button>
-          <button className="scissors" onClick={() => handleUserChoice(3)}>
-            <Scissors />
-          </button>
-        </div>
-
-        <div className="vs">vs</div>
-
-        {/* show the computer's choice */}
-        <div>
-          <button className="computer-choice">?</button>
-        </div>
-      </div>
+      <MainUi
+        handleUserChoice={handleUserChoice}
+        renderComponent={renderComponent}
+        gameChoices={gameChoices}
+      />
     </div>
   );
 };
