@@ -24,9 +24,15 @@ const RockPaper = () => {
   const [losses, setLosses] = useState(0);
   const [gameState, setGameState] = useState<string | undefined>();
 
-  useEffect(() => {
+  const handleRestartGame = () => {
     const randomChoice = choices[Math.floor(Math.random() * choices.length)];
     setComputerChoice(randomChoice);
+    setGameState(undefined);
+    setUserChoice(undefined);
+  };
+
+  useEffect(() => {
+    handleRestartGame();
   }, []);
 
   const handleUserChoice = (choice: number) => {
@@ -36,9 +42,11 @@ const RockPaper = () => {
     // determine the winner, loser or draw
     if (userClickedChoice?.losesTo === computerChoice?.id) {
       // lose
+      setLosses((losses) => losses + 1);
       setGameState("lose");
     } else if (computerChoice?.losesTo === userClickedChoice?.id) {
       // win
+      setWins((wins) => wins + 1);
       setGameState("win");
     } else if (computerChoice?.id === userClickedChoice?.id) {
       //draw
@@ -46,10 +54,11 @@ const RockPaper = () => {
     }
   };
 
-  const renderComponent = (choice: any) => {
+  const renderComponent = (choice: Choice) => {
     const DynamicComponent = choice.component;
     return <DynamicComponent />;
   };
+
   return (
     <div className="app">
       {/* information goes here */}
@@ -75,10 +84,16 @@ const RockPaper = () => {
         <div className={`game-state ${gameState}`}>
           <div>
             <div className="game-state-content">
-              <p>{renderComponent(userChoice)}</p>
+              <p>{renderComponent(userChoice!)}</p>
               <p>you {gameState}!</p>
-              <p>{renderComponent(computerChoice)}</p>
+              <p>{renderComponent(computerChoice!)}</p>
             </div>
+            {(gameState === "win" || gameState === "lose") && (
+              <p className="game-result-info">
+                {`${userChoice?.name} ${gameState} to ${computerChoice?.name}`}
+              </p>
+            )}
+            <button onClick={handleRestartGame}>Play Again</button>
           </div>
         </div>
       )}

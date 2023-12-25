@@ -234,3 +234,10 @@ h6 {
   background: #fa65ff;
   color: #fdedfd;
 }
+
+.game-result-info {
+  font-size: medium;
+  color: #1e1b1b;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
