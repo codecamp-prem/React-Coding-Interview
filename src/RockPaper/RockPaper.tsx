@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./rockpaper.css";
 import Rock from "./svgs/Rock";
 import Scissors from "./svgs/Scissors";
@@ -10,9 +11,17 @@ const choices = [
 ];
 
 const RockPaper = () => {
+  const [userChoice, setUserChoice] = useState<{}>();
+  const [computerChoice, setComputerChoice] = useState<{}>();
+
+  useEffect(() => {
+    const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+    setComputerChoice(randomChoice);
+  }, []);
+
   const handleUserChoice = (choice: number) => {
-    const useChoice = choices.find((c) => c.id === choice);
-    console.log(useChoice);
+    const useChosenChoice = choices.find((c) => c.id === choice);
+    setUserChoice(useChosenChoice);
   };
   return (
     <div className="app">
