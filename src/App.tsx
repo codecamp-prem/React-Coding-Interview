@@ -1,9 +1,9 @@
-import { Tab } from "./Tab";
+import { RockPaper } from "./RockPaper";
 
 function App() {
   return (
     <>
-      <Tab />
+      <RockPaper />
     </>
   );
 }
