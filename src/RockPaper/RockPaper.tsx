@@ -5,14 +5,21 @@ import Scissors from "./svgs/Scissors";
 import Paper from "./svgs/paper";
 
 const choices = [
-  { id: 1, name: "rock", component: Rock },
-  { id: 2, name: "paper", component: Paper },
-  { id: 3, name: "scissors", component: Scissors },
+  { id: 1, name: "rock", component: Rock, losesTo: 2 },
+  { id: 2, name: "paper", component: Paper, losesTo: 3 },
+  { id: 3, name: "scissors", component: Scissors, losesTo: 1 },
 ];
 
+type Choice = {
+  id: number;
+  name: string;
+  component: () => JSX.Element;
+  losesTo: number;
+};
+
 const RockPaper = () => {
-  const [userChoice, setUserChoice] = useState<{}>();
-  const [computerChoice, setComputerChoice] = useState<{}>();
+  const [userChoice, setUserChoice] = useState<Choice>();
+  const [computerChoice, setComputerChoice] = useState<Choice>();
   const [wins, setWins] = useState(0);
   const [losses, setLosses] = useState(0);
   const [gameState, setGameState] = useState<string | undefined>();
@@ -23,11 +30,20 @@ const RockPaper = () => {
   }, []);
 
   const handleUserChoice = (choice: number) => {
-    const useChosenChoice = choices.find((c) => c.id === choice);
-    setUserChoice(useChosenChoice);
+    const userClickedChoice = choices.find((c) => c.id === choice);
+    setUserChoice(userClickedChoice);
 
-    // determine the winner
-    setGameState("Win");
+    // determine the winner, loser or draw
+    if (userClickedChoice?.losesTo === computerChoice?.id) {
+      // lose
+      setGameState("lose");
+    } else if (computerChoice?.losesTo === userClickedChoice?.id) {
+      // win
+      setGameState("win");
+    } else if (computerChoice?.id === userClickedChoice?.id) {
+      //draw
+      setGameState("draw");
+    }
   };
 
   const renderComponent = (choice: any) => {
@@ -60,7 +76,7 @@ const RockPaper = () => {
           <div>
             <div className="game-state-content">
               <p>{renderComponent(userChoice)}</p>
-              <p>You Won!</p>
+              <p>you {gameState}!</p>
               <p>{renderComponent(computerChoice)}</p>
             </div>
           </div>
