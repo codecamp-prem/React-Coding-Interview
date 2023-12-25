@@ -13,6 +13,9 @@ const choices = [
 const RockPaper = () => {
   const [userChoice, setUserChoice] = useState<{}>();
   const [computerChoice, setComputerChoice] = useState<{}>();
+  const [wins, setWins] = useState(0);
+  const [losses, setLosses] = useState(0);
+  const [gameState, setGameState] = useState<string | undefined>();
 
   useEffect(() => {
     const randomChoice = choices[Math.floor(Math.random() * choices.length)];
@@ -22,6 +25,14 @@ const RockPaper = () => {
   const handleUserChoice = (choice: number) => {
     const useChosenChoice = choices.find((c) => c.id === choice);
     setUserChoice(useChosenChoice);
+
+    // determine the winner
+    setGameState("Win");
+  };
+
+  const renderComponent = (choice: any) => {
+    const DynamicComponent = choice.component;
+    return <DynamicComponent />;
   };
   return (
     <div className="app">
@@ -32,19 +43,29 @@ const RockPaper = () => {
         {/* wins vs losses stats */}
         <div className="wins-losses">
           <div className="wins">
-            <span className="number">0</span>
-            <span className="text">Wins</span>
+            <span className="number">{wins}</span>
+            <span className="text">{wins === 1 ? "Win" : "Wins"}</span>
           </div>
 
           <div className="losses">
-            <span className="number">0</span>
-            <span className="text">Losses</span>
+            <span className="number">{losses}</span>
+            <span className="text">{losses === 1 ? "Loss" : "Losses"}</span>
           </div>
         </div>
       </div>
 
-      {/* the popup to show win/loss/draw */}
-      {/* <div className="game-state"></div> */}
+      {/* the popup to show win/lose/draw-3 game state option */}
+      {gameState != undefined && (
+        <div className={`game-state ${gameState}`}>
+          <div>
+            <div className="game-state-content">
+              <p>{renderComponent(userChoice)}</p>
+              <p>You Won!</p>
+              <p>{renderComponent(computerChoice)}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="choices">
         {/* choices captions */}
