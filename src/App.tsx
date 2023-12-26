@@ -1,9 +1,9 @@
-import { RockPaper } from "./RockPaper";
+import { Typing } from "./Typing";
 
 function App() {
   return (
     <>
-      <RockPaper />
+      <Typing />
     </>
   );
 }
