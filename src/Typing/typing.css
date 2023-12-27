@@ -33,6 +33,18 @@ p {
   font-size: 21px;
   margin: 0;
 }
+.content-heading {
+  text-align: center;
+  text-decoration: underline;
+  background: rgb(4 34 139 / 50%);
+  font-size: medium;
+  font-weight: bolder;
+}
+.content-heading span {
+  font-size: large;
+  color: palevioletred;
+  font-style: italic;
+}
 
 .correct {
   color: #6ece4f;
