@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import useCountDownHook from "../hooks/useCountDownHook";
+
 import "./typing.css";
 
+const secondsToCount = 10;
 const paragraph = `React lets you build user interfaces out of individual pieces called components. Create your own React components like Thumbnail, LikeButton, and Video. Then combine them into entire screens, pages, and apps.`;
 
 const findDiffTypos = (str1: string, str2: string) => {
@@ -14,6 +17,10 @@ const findDiffTypos = (str1: string, str2: string) => {
 };
 
 const Typing = () => {
+  const [timeLeft, { start, reset }] = useCountDownHook(
+    secondsToCount * 1000,
+    100
+  );
   const [typedText, setTypedText] = useState("");
   const [typoIndexArray, setTypoIndex] = useState<number[]>([]);
 
@@ -28,9 +35,13 @@ const Typing = () => {
     <div className="app">
       {/* sidebar */}
       <div className="sidebar">
-        <div className="timer">00</div>
-        <button className="start">Start</button>
-        <button className="reset">Reset</button>
+        <div className="timer">{timeLeft}</div>
+        <button className="start" onClick={() => start()}>
+          Start
+        </button>
+        <button className="reset" onClick={() => reset()}>
+          Reset
+        </button>
       </div>
 
       <div className="content">
