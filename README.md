@@ -10,3 +10,8 @@ Currently, two official plugins are available:
 # About
 
 Short Coding problem asked in the React Interview
+
+# Custom React Hooks
+
+- react-countdown-hook rewritten in Typescript.(src/hooks/useCountDownHook.ts)
+  - implementation example: src/Typing/Typing.tsx
