@@ -51,9 +51,10 @@ const Typing = () => {
     const wpm = wordsTyped * minMultiplier;
 
     //alert(`You type at a ${wpm.toFixed(2)}`);
-    setShowAlert({ show: true, msg: `You type at a ${wpm.toFixed(2)} WPM` });
-
-    // TODO: Calculate WPM with accuracy adjustment
+    setShowAlert({
+      show: true,
+      msg: `You have type at speed of ${wpm.toFixed(2)} WPM`,
+    });
   }, [timeLeft]);
 
   const handleStartTimer = () => {
