@@ -1,9 +1,9 @@
-import Lists from "./Challanges/Lists";
+import FunctionAsProp from "./Challanges/FunctionAsProp";
 
 function App() {
   return (
     <>
-      <Lists />
+      <FunctionAsProp />
     </>
   );
 }
