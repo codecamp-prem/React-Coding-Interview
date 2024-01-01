@@ -1,9 +1,9 @@
-import Badge from "./Challanges/Badge";
+import DynamicDate from "./Challanges/DynamicDate";
 
 function App() {
   return (
     <>
-      <Badge />
+      <DynamicDate />
     </>
   );
 }
