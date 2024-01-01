@@ -1,9 +1,9 @@
-import LightSwitch from "./Challanges/LightSwitch";
+import Counter from "./Challanges/Counter";
 
 function App() {
   return (
     <>
-      <LightSwitch />
+      <Counter />
     </>
   );
 }
