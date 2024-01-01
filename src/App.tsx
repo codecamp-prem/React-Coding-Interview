@@ -1,9 +1,9 @@
-import Counter from "./Challanges/Counter";
+import SmartCharacterLimit from "./Challanges/SmartCharacterLimit";
 
 function App() {
   return (
     <>
-      <Counter />
+      <SmartCharacterLimit />
     </>
   );
 }
