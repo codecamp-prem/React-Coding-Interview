@@ -1,9 +1,9 @@
-import ChildrenProps from "./Challanges/ChildrenProps";
+import CharacterLimit from "./Challanges/CharacterLimit";
 
 function App() {
   return (
     <>
-      <ChildrenProps />
+      <CharacterLimit />
     </>
   );
 }
