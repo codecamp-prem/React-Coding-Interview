@@ -1,9 +1,9 @@
-import FunctionAsProp from "./Challanges/FunctionAsProp";
+import ChildrenProps from "./Challanges/ChildrenProps";
 
 function App() {
   return (
     <>
-      <FunctionAsProp />
+      <ChildrenProps />
     </>
   );
 }
