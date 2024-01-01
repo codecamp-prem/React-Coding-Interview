@@ -1,9 +1,9 @@
-import Lactose from "./Challanges/Lactose";
+import Lists from "./Challanges/Lists";
 
 function App() {
   return (
     <>
-      <Lactose />
+      <Lists />
     </>
   );
 }
