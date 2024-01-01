@@ -1,9 +1,9 @@
-import DynamicDate from "./Challanges/DynamicDate";
+import Lactose from "./Challanges/Lactose";
 
 function App() {
   return (
     <>
-      <DynamicDate />
+      <Lactose />
     </>
   );
 }
