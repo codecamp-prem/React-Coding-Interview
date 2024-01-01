@@ -1,9 +1,9 @@
-import CharacterLimit from "./Challanges/CharacterLimit";
+import LightSwitch from "./Challanges/LightSwitch";
 
 function App() {
   return (
     <>
-      <CharacterLimit />
+      <LightSwitch />
     </>
   );
 }
