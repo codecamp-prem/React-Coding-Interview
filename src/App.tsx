@@ -1,9 +1,9 @@
-import { Typing } from "./Typing";
+import Badge from "./Challanges/Badge";
 
 function App() {
   return (
     <>
-      <Typing />
+      <Badge />
     </>
   );
 }
