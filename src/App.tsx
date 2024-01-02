@@ -1,9 +1,9 @@
-import Password from "./Challanges/Password";
+import MultiStepForm from "./Challanges/MultiStepForm";
 
 function App() {
   return (
     <>
-      <Password />
+      <MultiStepForm />
     </>
   );
 }
