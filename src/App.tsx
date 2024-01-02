@@ -1,9 +1,9 @@
-import SmartCharacterLimit from "./Challanges/SmartCharacterLimit";
+import Password from "./Challanges/Password";
 
 function App() {
   return (
     <>
-      <SmartCharacterLimit />
+      <Password />
     </>
   );
 }
