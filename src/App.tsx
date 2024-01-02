@@ -1,9 +1,9 @@
-import MultiStepForm from "./Challanges/MultiStepForm";
+import FormBuilder from "./Challanges/FormBuilder";
 
 function App() {
   return (
     <>
-      <MultiStepForm />
+      <FormBuilder />
     </>
   );
 }
