@@ -1,9 +1,9 @@
-import FormBuilder from "./Challanges/FormBuilder";
+import SearchFilter from "./Challanges/SearchFilter";
 
 function App() {
   return (
     <>
-      <FormBuilder />
+      <SearchFilter />
     </>
   );
 }
