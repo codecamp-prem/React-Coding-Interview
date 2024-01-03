@@ -1,9 +1,9 @@
-import Clock from "./Challanges/Clock";
+import CountryInfo from "./Challanges/CountryInfo";
 
 function App() {
   return (
     <>
-      <Clock />
+      <CountryInfo />
     </>
   );
 }
