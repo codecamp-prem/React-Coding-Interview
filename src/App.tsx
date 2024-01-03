@@ -1,9 +1,9 @@
-import SearchFilter from "./Challanges/SearchFilter";
+import Clock from "./Challanges/Clock";
 
 function App() {
   return (
     <>
-      <SearchFilter />
+      <Clock />
     </>
   );
 }
