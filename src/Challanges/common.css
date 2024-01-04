@@ -120,16 +120,18 @@ dialog {
   width: 75vw;
   margin: auto;
   display: block;
-  animation: expand 0.3s cubix-bezier(0.075, 0.82, 0.165, 1);
+  animation: expand 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   border-radius: 8px;
   padding: 32px;
 }
-
 @keyframes expand {
   0% {
+    left: 0%;
+  }
+  100% {
+    left: 10%;
   }
 }
-
 dialog button {
   position: absolute;
   top: 18px;
@@ -199,6 +201,23 @@ label {
   font-size: 14px;
   margin-bottom: 8px;
   display: block;
+}
+
+li:hover a {
+  position: relative;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    #fcba28 0,
+    #fcba28 49.9%,
+    rgba(130, 80, 223, 1) 50%,
+    rgba(212, 42, 50, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-clip: text;
+  background-size: 200%;
+  transition: background 1.2s cubic-bezier(0.16, 0.36, 0.3, 0.36);
 }
 
 select {

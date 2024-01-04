@@ -1,9 +1,9 @@
-import ClickOutside from "./Challanges/ClickOutside";
+import Hacknews from "./Challanges/Hacknews";
 
 function App() {
   return (
     <>
-      <ClickOutside />
+      <Hacknews />
     </>
   );
 }
