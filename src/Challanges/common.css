@@ -113,6 +113,38 @@ button.link {
   padding: 50px;
 }
 
+dialog {
+  position: fixed;
+  top: 40px;
+  background: #7b5ea7;
+  width: 75vw;
+  margin: auto;
+  display: block;
+  animation: expand 0.3s cubix-bezier(0.075, 0.82, 0.165, 1);
+  border-radius: 8px;
+  padding: 32px;
+}
+
+@keyframes expand {
+  0% {
+  }
+}
+
+dialog button {
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0;
+  color: #231f20;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 form {
   display: flex;
   align-items: flex-end;

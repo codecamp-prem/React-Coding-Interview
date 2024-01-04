@@ -1,9 +1,9 @@
-import FieldNotes from "./Challanges/FieldNotes";
+import ClickOutside from "./Challanges/ClickOutside";
 
 function App() {
   return (
     <>
-      <FieldNotes />
+      <ClickOutside />
     </>
   );
 }
