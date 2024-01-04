@@ -1,9 +1,9 @@
-import CountryInfo from "./Challanges/CountryInfo";
+import Hacknews from "./Challanges/Hacknews";
 
 function App() {
   return (
     <>
-      <CountryInfo />
+      <Hacknews />
     </>
   );
 }
