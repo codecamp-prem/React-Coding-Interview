@@ -1,9 +1,9 @@
-import AutoFocus from "./Challanges/AutoFocus";
+import VideoPlayer from "./Challanges/VideoPlayer";
 
 function App() {
   return (
     <>
-      <AutoFocus />
+      <VideoPlayer />
     </>
   );
 }
