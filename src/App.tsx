@@ -1,9 +1,9 @@
-import Hacknews from "./Challanges/Hacknews";
+import AutoFocus from "./Challanges/AutoFocus";
 
 function App() {
   return (
     <>
-      <Hacknews />
+      <AutoFocus />
     </>
   );
 }
