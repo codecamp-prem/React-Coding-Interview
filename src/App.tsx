@@ -1,9 +1,9 @@
-import VideoPlayer from "./Challanges/VideoPlayer";
+import FieldNotes from "./Challanges/FieldNotes";
 
 function App() {
   return (
     <>
-      <VideoPlayer />
+      <FieldNotes />
     </>
   );
 }
