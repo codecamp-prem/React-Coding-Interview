@@ -210,14 +210,15 @@ li:hover a {
     90deg,
     #fcba28 0,
     #fcba28 49.9%,
-    rgba(130, 80, 223, 1) 50%,
+    rgba(130, 80, 223, 1) 49.9%,
     rgba(212, 42, 50, 1) 100%
   );
   background-repeat: no-repeat;
   background-position: 100% 0;
   background-clip: text;
   background-size: 200%;
-  transition: background 1.2s cubic-bezier(0.16, 0.36, 0.3, 0.36);
+  transition: background-position 1.2s cubic-bezier(0.16, 0.36, 0.3, 0.36);
+  z-index: 999;
 }
 
 select {
@@ -237,6 +238,23 @@ section header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+textarea {
+  resize: none;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid rgba(249, 244, 218, 0.2);
+  border-radius: 0px;
+  appearance: none;
+  background-color: transparent;
+  padding: 10px;
+  color: #f9f4da;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #f9f4da;
 }
 
 ul {

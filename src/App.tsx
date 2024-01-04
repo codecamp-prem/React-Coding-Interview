@@ -1,9 +1,9 @@
-import Hacknews from "./Challanges/Hacknews";
+import ExpandingTextArea from "./Challanges/ExpandingTextArea";
 
 function App() {
   return (
     <>
-      <Hacknews />
+      <ExpandingTextArea />
     </>
   );
 }
