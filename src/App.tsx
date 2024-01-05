@@ -1,9 +1,9 @@
-import MultiStepForm from "./Challanges/MultiStepForm";
+import TaskManager from "./Challanges/TaskManager";
 
 function App() {
   return (
     <>
-      <MultiStepForm />
+      <TaskManager />
     </>
   );
 }
