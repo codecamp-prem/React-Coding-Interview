@@ -1,9 +1,9 @@
-import FollowTheLeader from "./Challanges/FollowTheLeader";
+import Auth from "./Challanges/Auth";
 
 function App() {
   return (
     <>
-      <FollowTheLeader />
+      <Auth />
     </>
   );
 }

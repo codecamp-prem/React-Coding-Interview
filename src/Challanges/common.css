@@ -165,6 +165,12 @@ form div:has(input) {
   width: 100%;
 }
 
+.formGrid {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}
+
 .formFieldNotes {
   position: relative;
   padding-bottom: 16px;
@@ -229,6 +235,23 @@ li:hover a {
   z-index: 999;
 }
 
+main {
+  max-width: 35ch;
+  margin: auto;
+}
+
+nav {
+  background: #231f20;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav button.link {
+  padding: 0px;
+}
+
 select {
   background: #231f20;
   color: #fcba28;
@@ -246,6 +269,18 @@ section header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+table {
+  font-size: 14px;
+  font-family: monospace;
+  position: relative;
+  width: 100%;
+  padding: 5%;
+}
+
+thead th {
+  text-decoration: underline;
 }
 
 textarea {
