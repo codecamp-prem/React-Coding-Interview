@@ -271,6 +271,24 @@ section header {
   align-items: center;
 }
 
+.tab {
+  color: #f9f4da;
+  appearance: none;
+  background: none;
+  padding: 0;
+}
+
+.tab.active {
+  color: #fcba28;
+  text-decoration: underline;
+}
+
+.tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
 table {
   font-size: 14px;
   font-family: monospace;

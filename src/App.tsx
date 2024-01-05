@@ -1,9 +1,9 @@
-import Translations from "./Challanges/Translations";
+import Tabs from "./Challanges/Tabs";
 
 function App() {
   return (
     <>
-      <Translations />
+      <Tabs />
     </>
   );
 }
