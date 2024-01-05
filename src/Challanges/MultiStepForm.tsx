@@ -1,32 +1,63 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useReducer } from "react";
 import "./multiStepForm.css";
-const initialFormData = {
-  name: "",
-  email: "",
-  address: "",
-  city: "",
-  zipcode: "",
+const initialState = {
+  currentStep: 1,
+  formData: {
+    name: "",
+    email: "",
+    address: "",
+    city: "",
+    zipcode: "",
+  },
 };
 
+function reducer(state: typeof initialState, action: { [key: string]: any }) {
+  switch (action.type) {
+    case "next_step":
+      return { ...state, currentStep: state.currentStep + 1 };
+    //break;
+    case "prev_step":
+      return { ...state, currentStep: state.currentStep - 1 };
+    //break;
+    case "change":
+      return {
+        ...state,
+        formData: { ...state.formData, [action.name]: action.value },
+      };
+    //break;
+    case "reset":
+      return initialState;
+    //break;
+    default:
+      throw new Error("This action type isn't supported");
+    //break;
+  }
+}
+
 const MultiStepForm = () => {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [formData, setFormData] =
-    useState<typeof initialFormData>(initialFormData);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert("Thank you for submission");
-    setCurrentStep(1);
-    setFormData(initialFormData);
+    dispatch({
+      type: "reset",
+    });
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    dispatch({
+      type: "change",
+      name: e.target.name,
+      value: e.target.value,
+    });
   };
 
-  const handleNextStep = () => setCurrentStep(currentStep + 1);
+  const handleNextStep = () => dispatch({ type: "next_step" });
 
-  const handlePreviousStep = () => setCurrentStep(currentStep - 1);
+  const handlePreviousStep = () => dispatch({ type: "prev_step" });
+
+  const { currentStep, formData } = state;
 
   if (currentStep === 1) {
     return (

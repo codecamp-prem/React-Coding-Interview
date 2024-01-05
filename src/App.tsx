@@ -1,9 +1,9 @@
-import NewsFeed from "./Challanges/NewsFeed";
+import MultiStepForm from "./Challanges/MultiStepForm";
 
 function App() {
   return (
     <>
-      <NewsFeed />
+      <MultiStepForm />
     </>
   );
 }
