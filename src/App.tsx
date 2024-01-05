@@ -1,9 +1,9 @@
-import ExpandingTextArea from "./Challanges/ExpandingTextArea";
+import FollowTheLeader from "./Challanges/FollowTheLeader";
 
 function App() {
   return (
     <>
-      <ExpandingTextArea />
+      <FollowTheLeader />
     </>
   );
 }
