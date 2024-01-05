@@ -1,9 +1,9 @@
-import Auth from "./Challanges/Auth";
+import Translations from "./Challanges/Translations";
 
 function App() {
   return (
     <>
-      <Auth />
+      <Translations />
     </>
   );
 }
