@@ -334,3 +334,12 @@ video {
   aspect-ratio: 16/9;
   width: 100%;
 }
+
+.x-newsFeedUl {
+  margin: 0;
+  padding: 0;
+}
+.x-newsFeedli {
+  display: block;
+  margin-top: 40px;
+}

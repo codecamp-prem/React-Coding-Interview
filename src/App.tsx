@@ -1,9 +1,9 @@
-import Tabs from "./Challanges/Tabs";
+import NewsFeed from "./Challanges/NewsFeed";
 
 function App() {
   return (
     <>
-      <Tabs />
+      <NewsFeed />
     </>
   );
 }
