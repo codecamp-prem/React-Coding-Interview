@@ -1,9 +1,9 @@
-import ShoppingCart from "./Challanges/ShoppingCart";
+import UndoRedo from "./Challanges/UndoRedo";
 
 function App() {
   return (
     <>
-      <ShoppingCart />
+      <UndoRedo />
     </>
   );
 }

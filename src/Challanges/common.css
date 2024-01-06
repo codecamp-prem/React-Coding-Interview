@@ -102,6 +102,12 @@ button.link {
   display: inline-block;
 }
 
+button:disabled,
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .carts {
   display: grid;
   gap: 16px;
