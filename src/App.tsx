@@ -1,9 +1,9 @@
-import TaskManager from "./Challanges/TaskManager";
+import ShoppingCart from "./Challanges/ShoppingCart";
 
 function App() {
   return (
     <>
-      <TaskManager />
+      <ShoppingCart />
     </>
   );
 }

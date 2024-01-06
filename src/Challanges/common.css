@@ -25,6 +25,15 @@ article {
   max-width: 600px;
 }
 
+aside {
+  background: #231f20;
+  padding: 24px;
+  height: 100%;
+  display: grid;
+  grid-template-form: 1fr auto;
+  border-radius: 8px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -91,6 +100,18 @@ button.link {
   padding: 10px;
   text-decoration: underline;
   display: inline-block;
+}
+
+.carts {
+  display: grid;
+  gap: 16px;
+  padding: 0;
+}
+
+.carts li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .chatUl {
@@ -207,6 +228,13 @@ h2 {
 
 h2 span {
   margin-right: 10px;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid rgba(249, 244, 218, 0.2);
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 input:not([type="checkbox"]) {
