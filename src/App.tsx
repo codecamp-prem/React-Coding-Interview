@@ -1,9 +1,9 @@
-import LocalizedPrime from "./Challanges/LocalizedPrime";
+import DataTable from "./Challanges/DataTable";
 
 function App() {
   return (
     <>
-      <LocalizedPrime />
+      <DataTable />
     </>
   );
 }
