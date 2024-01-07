@@ -1,9 +1,9 @@
-import DataTable from "./Challanges/DataTable";
+import OptimizeRender from "./Challanges/OptimizeRender";
 
 function App() {
   return (
     <>
-      <DataTable />
+      <OptimizeRender />
     </>
   );
 }
