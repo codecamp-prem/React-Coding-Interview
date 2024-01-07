@@ -243,6 +243,12 @@ hr {
   margin-bottom: 24px;
 }
 
+.headerFlex {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 input:not([type="checkbox"]) {
   appearance: none;
   border: 1px solid rgba(249, 244, 218, 0.2);

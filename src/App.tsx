@@ -1,9 +1,9 @@
-import UndoRedo from "./Challanges/UndoRedo";
+import LocalizedPrime from "./Challanges/LocalizedPrime";
 
 function App() {
   return (
     <>
-      <UndoRedo />
+      <LocalizedPrime />
     </>
   );
 }
