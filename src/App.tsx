@@ -1,9 +1,9 @@
-import OptimizeRender from "./Challanges/OptimizeRender";
+import Ruler from "./Challanges/Ruler";
 
 function App() {
   return (
     <>
-      <OptimizeRender />
+      <Ruler />
     </>
   );
 }
