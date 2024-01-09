@@ -1,9 +1,9 @@
-import MatchMedia from "./Challanges/MatchMedia";
+import DocumentTitle from "./Challanges/DocumentTitle";
 
 function App() {
   return (
     <>
-      <MatchMedia />
+      <DocumentTitle />
     </>
   );
 }
