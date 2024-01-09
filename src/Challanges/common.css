@@ -480,6 +480,53 @@ textarea:focus {
   border-color: #f9f4da;
 }
 
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 24px;
+}
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+.toggle-switch {
+  display: inline-block;
+  background: #f9f4da;
+  border-radius: 16px;
+  width: 58px;
+  height: 32px;
+  position: relative;
+  vertical-align: midddle;
+  transition: background 0.25s;
+}
+.toggle-label {
+  margin-left: 5px;
+  position: relative;
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: #0ba95b;
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 30px;
+}
+
+.toggle-switch:before {
+  display: block;
+  background: var(--beige);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
+}
+.toggle-switch:before,
+.toggle-switch:after {
+  content: "";
+}
+
 ul {
   list-style: none outside none;
   padding: 0;

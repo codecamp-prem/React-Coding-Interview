@@ -1,9 +1,9 @@
-import Default from "./Challanges/Default";
+import Toggle from "./Challanges/Toggle";
 
 function App() {
   return (
     <>
-      <Default />
+      <Toggle />
     </>
   );
 }
