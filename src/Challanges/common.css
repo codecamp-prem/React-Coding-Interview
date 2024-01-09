@@ -57,6 +57,34 @@ article {
   align-items: center;
 }
 
+.articleMatchMedia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin: auto;
+  margin-top: 24px;
+  max-width: 600px;
+}
+
+.articleMatchMedia figure {
+  border: 1px solid #7b5ea7;
+  background-color: rgba(123, 94, 167, 0.1);
+  display: block;
+  padding: 24px;
+  margin: 0;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.articleMatchMedia figure.active {
+  border-color: #0ba95b;
+  background-color: rgba(11, 169, 91, 0.1);
+}
+
+.articleMatchMedia figure figcaption {
+  font-size: 14px;
+}
+
 aside {
   background: #231f20;
   padding: 24px;

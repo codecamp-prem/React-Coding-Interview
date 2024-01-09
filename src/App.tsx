@@ -1,9 +1,9 @@
-import FlexibleTooltip from "./Challanges/FlexibleTooltip";
+import MatchMedia from "./Challanges/MatchMedia";
 
 function App() {
   return (
     <>
-      <FlexibleTooltip />
+      <MatchMedia />
     </>
   );
 }
