@@ -1,9 +1,9 @@
-import DocumentTitle from "./Challanges/DocumentTitle";
+import Default from "./Challanges/Default";
 
 function App() {
   return (
     <>
-      <DocumentTitle />
+      <Default />
     </>
   );
 }

@@ -216,6 +216,12 @@ button:disabled,
   padding: 50px;
 }
 
+code {
+  background-color: #7b5ea7;
+  padding: 24px;
+  border-radius: 8px;
+}
+
 dialog {
   position: fixed;
   top: 40px;
@@ -358,6 +364,10 @@ nav {
 
 nav button.link {
   padding: 0px;
+}
+
+pre {
+  margin-top: 32px;
 }
 
 .pRuler {
