@@ -1,9 +1,9 @@
-import Ruler from "./Challanges/Ruler";
+import FlexibleTooltip from "./Challanges/FlexibleTooltip";
 
 function App() {
   return (
     <>
-      <Ruler />
+      <FlexibleTooltip />
     </>
   );
 }

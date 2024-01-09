@@ -361,6 +361,28 @@ section header {
   padding: 24px;
 }
 
+.sectionTooltip {
+  margin: 0 auto;
+  padding: 50px;
+  display: grid;
+  place-items: center;
+  max-width: 650px;
+}
+
+.sectionTooltip p > span:first-child {
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: #fcba28;
+}
+
+.tooltip {
+  color: #fcba28;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #231f20;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
 .tab {
   color: #f9f4da;
   appearance: none;
