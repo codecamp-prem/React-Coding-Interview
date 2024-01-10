@@ -1,9 +1,9 @@
-import PreferredLang from "./Challanges/PreferredLang";
+import Favicon from "./Challanges/Favicon";
 
 function App() {
   return (
     <>
-      <PreferredLang />
+      <Favicon />
     </>
   );
 }

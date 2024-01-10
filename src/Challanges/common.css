@@ -349,6 +349,10 @@ li:hover a {
   z-index: 999;
 }
 
+.link.active {
+  opacity: 1;
+}
+
 main {
   max-width: 35ch;
   margin: auto;
