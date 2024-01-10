@@ -1,9 +1,9 @@
-import PreviousState from "./Challanges/PreviousState";
+import PreferredLang from "./Challanges/PreferredLang";
 
 function App() {
   return (
     <>
-      <PreviousState />
+      <PreferredLang />
     </>
   );
 }

@@ -439,6 +439,14 @@ section header {
   margin-bottom: 24px;
 }
 
+time {
+  display: inline-block;
+  background: #231f20;
+  padding: 1px 8px;
+  font-family: monospace;
+  border-radius: 2px;
+}
+
 table {
   font-size: 14px;
   font-family: monospace;
