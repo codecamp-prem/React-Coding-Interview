@@ -1,9 +1,9 @@
-import CopyToClipboard from "./Challanges/CopyToClipboard";
+import IntervalHook from "./Challanges/IntervalHook";
 
 function App() {
   return (
     <>
-      <CopyToClipboard />
+      <IntervalHook />
     </>
   );
 }
