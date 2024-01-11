@@ -1,9 +1,9 @@
-import IntervalHook from "./Challanges/IntervalHook";
+import CounterHook from "./Challanges/CounterHook";
 
 function App() {
   return (
     <>
-      <IntervalHook />
+      <CounterHook />
     </>
   );
 }
