@@ -85,6 +85,24 @@ article {
   font-size: 14px;
 }
 
+.articleCopyTextDiv {
+  position: relative;
+  display: inline;
+}
+
+.articleCopyTextDiv pre {
+  display: inline-flex;
+  padding: 16px;
+  background: var(--charcoal);
+  border-radius: 8px;
+  padding-right: 40px;
+  margin: auto;
+  position: relative;
+  font-size: 14px;
+  max-width: 100%;
+  overflow: auto;
+}
+
 aside {
   background: #231f20;
   padding: 24px;
@@ -396,6 +414,10 @@ section header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.sectionCenter {
+  text-align: center;
 }
 
 .sectionRuler {

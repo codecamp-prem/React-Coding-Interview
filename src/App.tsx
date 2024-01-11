@@ -1,9 +1,9 @@
-import Favicon from "./Challanges/Favicon";
+import CopyToClipboard from "./Challanges/CopyToClipboard";
 
 function App() {
   return (
     <>
-      <Favicon />
+      <CopyToClipboard />
     </>
   );
 }
