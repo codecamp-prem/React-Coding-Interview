@@ -1,9 +1,9 @@
-import CounterHook from "./Challanges/CounterHook";
+import LockBodyScroll from "./Challanges/LockBodyScroll";
 
 function App() {
   return (
     <>
-      <CounterHook />
+      <LockBodyScroll />
     </>
   );
 }
