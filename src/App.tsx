@@ -1,9 +1,9 @@
-import Queue from "./Challanges/Queue";
+import TimeoutHook from "./Challanges/TimeoutHook";
 
 function App() {
   return (
     <>
-      <Queue />
+      <TimeoutHook />
     </>
   );
 }
