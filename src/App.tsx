@@ -1,9 +1,9 @@
-import LockBodyScroll from "./Challanges/LockBodyScroll";
+import Queue from "./Challanges/Queue";
 
 function App() {
   return (
     <>
-      <LockBodyScroll />
+      <Queue />
     </>
   );
 }
