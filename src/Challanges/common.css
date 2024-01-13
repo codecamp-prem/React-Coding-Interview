@@ -24,6 +24,12 @@ article {
   padding-right: 16px;
   max-width: 600px;
 }
+.articleDebounce {
+  margin: auto;
+  overflow: auto;
+  border: 2px solid #3e3b37;
+  border-radius: 8px;
+}
 
 .articleRuler {
   --color: #3e3b37;
@@ -505,6 +511,14 @@ table {
 
 thead th {
   text-decoration: underline;
+}
+
+tr {
+  animation-name: animateIn;
+  animation-duration: 100ms;
+  animation-delay: calc(var(--delay, 0) * 20ms);
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
 }
 
 .taskManagerForm {

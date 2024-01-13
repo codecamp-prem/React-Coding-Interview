@@ -1,9 +1,9 @@
-import ObjectState from "./Challanges/ObjectState";
+import Debounce from "./Challanges/Debounce";
 
 function App() {
   return (
     <>
-      <ObjectState />
+      <Debounce />
     </>
   );
 }
