@@ -1,9 +1,9 @@
-import TimeoutHook from "./Challanges/TimeoutHook";
+import WindowSize from "./Challanges/WindowSize";
 
 function App() {
   return (
     <>
-      <TimeoutHook />
+      <WindowSize />
     </>
   );
 }
