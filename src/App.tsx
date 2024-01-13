@@ -1,9 +1,9 @@
-import TabVisibility from "./Challanges/TabVisibility";
+import ListHook from "./Challanges/ListHook";
 
 function App() {
   return (
     <>
-      <TabVisibility />
+      <ListHook />
     </>
   );
 }
