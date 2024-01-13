@@ -1,9 +1,9 @@
-import ListHook from "./Challanges/ListHook";
+import ObjectState from "./Challanges/ObjectState";
 
 function App() {
   return (
     <>
-      <ListHook />
+      <ObjectState />
     </>
   );
 }
