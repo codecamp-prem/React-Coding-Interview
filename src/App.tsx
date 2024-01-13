@@ -1,9 +1,9 @@
-import WindowSize from "./Challanges/WindowSize";
+import TabVisibility from "./Challanges/TabVisibility";
 
 function App() {
   return (
     <>
-      <WindowSize />
+      <TabVisibility />
     </>
   );
 }
