@@ -1,9 +1,9 @@
-import ContinuousRetry from "./Challanges/ContinuousRetry";
+import HistoryState from "./Challanges/HistoryState";
 
 function App() {
   return (
     <>
-      <ContinuousRetry />
+      <HistoryState />
     </>
   );
 }
