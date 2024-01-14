@@ -1,9 +1,9 @@
-import Debounce from "./Challanges/Debounce";
+import ContinuousRetry from "./Challanges/ContinuousRetry";
 
 function App() {
   return (
     <>
-      <Debounce />
+      <ContinuousRetry />
     </>
   );
 }
