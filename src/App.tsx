@@ -1,9 +1,9 @@
-import EventListener from "./Challanges/EventListener";
+import { Typing } from "./Typing";
 
 function App() {
   return (
     <>
-      <EventListener />
+      <Typing />
     </>
   );
 }
