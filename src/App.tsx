@@ -1,9 +1,9 @@
-import HistoryState from "./Challanges/HistoryState";
+import EventListener from "./Challanges/EventListener";
 
 function App() {
   return (
     <>
-      <HistoryState />
+      <EventListener />
     </>
   );
 }
