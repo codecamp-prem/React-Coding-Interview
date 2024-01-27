@@ -23,6 +23,12 @@ const CourseGoal = () => {
       return [...prevGoals, newGoal];
     });
   };
+
+  const handleDeleteGoal = (id: string) => {
+    setGoal((prevGoals) => {
+      return prevGoals.filter((goal) => goal.id != id);
+    });
+  };
   return (
     <main className="w-11/12 max-w-[40rem] m-1 mx-auto p-2 bg-[#3a4346] text-[#f0f6f8] border-2 rounded-md shadow-slate-800">
       <Header image={{ src: goalsImg, alt: "goals goals" }}>
@@ -34,7 +40,7 @@ const CourseGoal = () => {
       >
         Add Goal
       </button>
-      <CourseGoalList allgoals={goals} />
+      <CourseGoalList allgoals={goals} handleDeleteGoal={handleDeleteGoal} />
     </main>
   );
 };

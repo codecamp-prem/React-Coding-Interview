@@ -1,6 +1,8 @@
 import { GoalProps } from "./CourseGoal";
 
-const CourseGoalList = ({ allgoals }: { allgoals: GoalProps[] }) => {
+type Props = { allgoals: GoalProps[]; handleDeleteGoal: (id: string) => void };
+
+const CourseGoalList = ({ allgoals, handleDeleteGoal }: Props) => {
   return (
     <ul className="list-none m-0 p-0 grid gap-4 grid-cols-autoFit">
       {allgoals.map((goal: GoalProps) => (
@@ -14,7 +16,10 @@ const CourseGoalList = ({ allgoals }: { allgoals: GoalProps[] }) => {
                 {goal.description}
               </p>
             </div>
-            <button className="capitalize bg-transparent border-none text-[#909a9a] cursor-pointer hover:text-[#f9513b]">
+            <button
+              className="capitalize bg-transparent border-none text-[#909a9a] cursor-pointer hover:text-[#f9513b]"
+              onClick={() => handleDeleteGoal(goal.id)}
+            >
               delete
             </button>
           </article>
