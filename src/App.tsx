@@ -1,9 +1,9 @@
-import { Typing } from "./Typing";
+import { CourseGoal } from "./CourseGoal";
 
 function App() {
   return (
     <>
-      <Typing />
+      <CourseGoal />
     </>
   );
 }
