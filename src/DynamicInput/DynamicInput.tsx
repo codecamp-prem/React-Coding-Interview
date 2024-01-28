@@ -14,8 +14,15 @@ const DynamicInput = () => {
         <Button href="#">some url link</Button>
         <Button type="submit">Submit Button</Button>
       </p>
-      <Container as={Button}>send jsx component</Container>
-      <Container as="p">Some code</Container>
+      <Container
+        as={Button}
+        onClick={() => alert("Polymorphic Component Example")}
+      >
+        PolyMorphic Alert Btn
+      </Container>
+      <Container as="p">
+        send jsx element /jsx component / function anything.
+      </Container>
     </main>
   );
 };
