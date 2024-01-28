@@ -1,9 +1,9 @@
-import { CourseGoal } from "./CourseGoal";
+import { DynamicInput } from "./DynamicInput";
 
 function App() {
   return (
     <>
-      <CourseGoal />
+      <DynamicInput />
     </>
   );
 }
