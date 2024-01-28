@@ -37,15 +37,20 @@ const CourseGoal = () => {
         <h1>Your goals goals</h1>
       </Header>
       <NewGoal onAddGoal={handleSetGoal} />
-      {goals.length === 0 && (
-        <InfoBox mode="hint">No goals in the life!!</InfoBox>
-      )}
-      <CourseGoalList allgoals={goals} handleDeleteGoal={handleDeleteGoal} />
-      {goals.length === 4 && (
-        <InfoBox mode="warning">
+      {goals.length > 7 ? (
+        <InfoBox mode="warning" severity="high">
+          Stop !! Touch Grass. Get Help!!
+        </InfoBox>
+      ) : goals.length >= 4 && goals.length <= 7 ? (
+        <InfoBox mode="warning" severity="low">
           To much in the plate. Focus on few things to live stress free life
         </InfoBox>
+      ) : (
+        goals.length == 0 && (
+          <InfoBox mode="hint">No goals in the life!!</InfoBox>
+        )
       )}
+      <CourseGoalList allgoals={goals} handleDeleteGoal={handleDeleteGoal} />
     </main>
   );
 };
