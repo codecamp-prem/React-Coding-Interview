@@ -15,6 +15,7 @@ const NewGoal = ({ onAddGoal }: NewGoalProps) => {
     const inputGoal = goal.current!.value;
     const inputSummary = summary.current!.value;
 
+    e.currentTarget.reset(); // clears the form
     onAddGoal(inputGoal, inputSummary);
   };
 
