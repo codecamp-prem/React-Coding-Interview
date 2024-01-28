@@ -2,6 +2,7 @@ import { useRef } from "react";
 import "../index.css";
 import Button from "./Button";
 import Container from "./Container";
+import Form from "./Form";
 import Input from "./Input";
 
 const DynamicInput = () => {
@@ -27,6 +28,17 @@ const DynamicInput = () => {
       <Container as="p">
         send jsx element /jsx component / function anything.
       </Container>
+      {/*Form component*/}
+      <Form>
+        <h1 className="text-center m-4 text-xl underline font-semibold">
+          Dynamic Form
+        </h1>
+        <Input label="Occupation" id="occupation" type="text" />
+        <Input label="Salary" id="salary" type="number" />
+        <p className="flex space-x-3 m-4 justify-center">
+          <Button>Submit Form</Button>
+        </p>
+      </Form>
     </main>
   );
 };
