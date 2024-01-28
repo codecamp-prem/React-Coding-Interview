@@ -1,6 +1,9 @@
 import { GoalProps } from "./CourseGoal";
 
-type Props = { allgoals: GoalProps[]; handleDeleteGoal: (id: string) => void };
+type Props = {
+  allgoals: GoalProps[];
+  handleDeleteGoal: (id: string) => void;
+};
 
 const CourseGoalList = ({ allgoals, handleDeleteGoal }: Props) => {
   return (
