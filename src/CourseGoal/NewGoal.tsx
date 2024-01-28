@@ -31,7 +31,7 @@ const NewGoal = ({ onAddGoal }: NewGoalProps) => {
           ref={goal}
           type="text"
           id="goal"
-          className="w-full p-2 bg-[#b4b6c4] border-none rounded-md"
+          className="w-full p-2 bg-[#b4b6c4] border-none rounded-md text-black"
         />
       </p>
       <p className="m-0 font-[0.85rem] text-[#dfd9be]">
@@ -45,7 +45,7 @@ const NewGoal = ({ onAddGoal }: NewGoalProps) => {
           ref={summary}
           type="text"
           id="summary"
-          className="w-full p-2 bg-[#b4b6c4] border-none rounded-md"
+          className="w-full p-2 bg-[#b4b6c4] border-none rounded-md text-black"
         />
       </p>
       <button className="block w-full p-3 mt-4 bg-[#f7e596] border-none rounded-md font-bold text-[#3a4346] cursor-pointer hover:bg-[#f9e175]">
