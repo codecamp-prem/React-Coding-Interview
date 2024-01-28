@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import "../index.css";
 import Button from "./Button";
 import Container from "./Container";
-import Form from "./Form";
+import Form, { FormHandle } from "./Form";
 import Input from "./Input";
 
 const DynamicInput = () => {
@@ -10,7 +10,6 @@ const DynamicInput = () => {
   const ageRef = useRef<HTMLInputElement>(null);
 
   // handle the data coming from Custom Form Component(i.e form)
-  // 1st let me save it in ref
   const [customFormData, setCustomFormData] = useState<{
     occupation: string;
     salary: string;
@@ -18,11 +17,14 @@ const DynamicInput = () => {
     occupation: "",
     salary: "",
   });
+
+  const customRef = useRef<FormHandle>(null);
+
   const handleFormSave = (data: unknown) => {
     const extractData = data as { occupation: string; salary: string };
     setCustomFormData(extractData);
+    customRef.current?.clear();
   };
-
   return (
     <main className="w-11/12 max-w-[40rem] m-1 mx-auto p-4 bg-[#3a4346] text-[#f0f6f8] border-2 rounded-md shadow-slate-800">
       <Input label="Name" id="name" type="text" ref={nameRef} />
@@ -43,7 +45,7 @@ const DynamicInput = () => {
         send jsx element /jsx component / function anything.
       </Container>
       {/*Form component*/}
-      <Form onSave={handleFormSave}>
+      <Form onSave={handleFormSave} ref={customRef}>
         <h1 className="text-center m-4 text-xl underline font-semibold">
           Dynamic Form
         </h1>
