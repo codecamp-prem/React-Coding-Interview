@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "../index.css";
 import Button from "./Button";
 import Container from "./Container";
@@ -8,6 +8,20 @@ import Input from "./Input";
 const DynamicInput = () => {
   const nameRef = useRef<HTMLInputElement>(null);
   const ageRef = useRef<HTMLInputElement>(null);
+
+  // handle the data coming from Custom Form Component(i.e form)
+  // 1st let me save it in ref
+  const [customFormData, setCustomFormData] = useState<{
+    occupation: string;
+    salary: string;
+  }>({
+    occupation: "",
+    salary: "",
+  });
+  const handleFormSave = (data: unknown) => {
+    const extractData = data as { occupation: string; salary: string };
+    setCustomFormData(extractData);
+  };
 
   return (
     <main className="w-11/12 max-w-[40rem] m-1 mx-auto p-4 bg-[#3a4346] text-[#f0f6f8] border-2 rounded-md shadow-slate-800">
@@ -29,7 +43,7 @@ const DynamicInput = () => {
         send jsx element /jsx component / function anything.
       </Container>
       {/*Form component*/}
-      <Form>
+      <Form onSave={handleFormSave}>
         <h1 className="text-center m-4 text-xl underline font-semibold">
           Dynamic Form
         </h1>
@@ -39,6 +53,10 @@ const DynamicInput = () => {
           <Button>Submit Form</Button>
         </p>
       </Form>
+      <p className="flex space-x-3 m-4">
+        {customFormData.occupation}-{customFormData.salary}
+      </p>
+      {/*Form component*/}
     </main>
   );
 };
