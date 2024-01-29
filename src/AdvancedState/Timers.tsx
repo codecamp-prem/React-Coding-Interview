@@ -4,7 +4,7 @@ import { useTimersContext } from "./store/timers-context";
 const Timers = () => {
   const { timers } = useTimersContext();
   return (
-    <ul className="list-none max-w-2xl my-8 mx-auto p-0 font-mono grid gap-8 grid-cols-contextUl ">
+    <ul className="list-none max-w-2xl my-8 mx-auto p-2 sm:p-0 font-mono grid gap-8 grid-cols-1 sm:grid-cols-contextUl">
       {timers.map((timer) => (
         <li
           key={timer.name}

@@ -1,13 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Container from "../DynamicInput/Container";
 import "./progressBar.css";
 import { Timer as TimerProps } from "./store/timers-context";
 const Timer = ({ name, duration }: TimerProps) => {
-  const [remainingTime, SetRemaninigTime] = useState(duration * 100);
+  const intervalRef = useRef<number | null>(null);
+
+  const [remainingTime, SetRemaninigTime] = useState(duration * 1000);
+
+  if (remainingTime <= 0 && intervalRef.current) {
+    clearInterval(intervalRef.current);
+  }
   useEffect(() => {
-    setInterval(function () {
+    const timer = setInterval(function () {
       SetRemaninigTime((prevTime) => prevTime - 50);
     }, 50);
+
+    intervalRef.current = timer;
+
+    return () => clearInterval(timer);
   }, []);
 
   const formattedRemainingTime = (remainingTime / 1000).toFixed(2);
