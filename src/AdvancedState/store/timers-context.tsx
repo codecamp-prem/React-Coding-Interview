@@ -33,8 +33,18 @@ type TimersContextProviderProps = {
   children: ReactNode;
 };
 
+type DispatchAction = {
+  type: "ADD_TIMER" | "START_TIMER" | "STOP_TIMER";
+};
+
+const timersReducer = (
+  state: TimersState,
+  action: DispatchAction
+): TimersState => {};
+
 const TimersContextProvider = ({ children }: TimersContextProviderProps) => {
-  useReducer(reducer, initialState);
+  const [timersState, dispatch] = useReducer(timersReducer, initialState);
+
   const ctx: TimersContextValue = {
     timers: [],
     isRunning: false,
