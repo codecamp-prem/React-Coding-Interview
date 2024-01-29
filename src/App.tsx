@@ -1,9 +1,9 @@
-import { AdvancedState } from "./AdvancedState";
+import { DataFetch } from "./DataFetch";
 
 function App() {
   return (
     <>
-      <AdvancedState />
+      <DataFetch />
     </>
   );
 }
