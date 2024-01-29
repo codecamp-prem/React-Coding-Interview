@@ -3,6 +3,7 @@
 import { ReactNode, useEffect, useState } from "react";
 //import "../index.css";
 import { customDelay } from "../utils/customDelay";
+import ErrorMessage from "./ErrorMessage";
 import ListBlogPost, { BlogPost } from "./ListBlogPost";
 import "./data-fetch.css";
 import imgDataFetching from "./data-fetching.png";
@@ -19,25 +20,32 @@ const DataFetch = () => {
 
   const [isFetching, setIsFetching] = useState(false);
 
+  const [fetchError, setFetchError] = useState<string>();
+
   useEffect(() => {
     const getPosts = async () => {
       setIsFetching(true);
-      const posts = (await get(
-        "https://jsonplaceholder.typicode.com/posts"
-      )) as RawDataBlogPost[];
+      try {
+        const posts = (await get(
+          "https://jsonplaceholder.typicode.com/posts"
+        )) as RawDataBlogPost[];
 
-      const allBlogPosts: BlogPost[] = posts.map((rawPost) => {
-        return {
-          id: rawPost.id,
-          title: rawPost.title,
-          text: rawPost.body,
-        };
-      });
-
+        const allBlogPosts: BlogPost[] = posts.map((rawPost) => {
+          return {
+            id: rawPost.id,
+            title: rawPost.title,
+            text: rawPost.body,
+          };
+        });
+        setFetchedPosts(allBlogPosts);
+      } catch (error) {
+        if (error instanceof Error) {
+          setFetchError(error.message);
+        }
+      }
       await customDelay(3000);
 
       setIsFetching(false);
-      setFetchedPosts(allBlogPosts);
     };
 
     getPosts();
@@ -52,6 +60,10 @@ const DataFetch = () => {
 
   if (isFetching) {
     content = <p id="loading-fallback">🌀 Fetching posts...</p>;
+  }
+
+  if (fetchError) {
+    content = <ErrorMessage text={fetchError} />;
   }
   return (
     <main>
