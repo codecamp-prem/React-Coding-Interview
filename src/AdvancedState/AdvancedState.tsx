@@ -2,15 +2,18 @@ import "../index.css";
 import AddTimers from "./AddTimers";
 import Header from "./Header";
 import Timers from "./Timers";
+import TimersContextProvider from "./store/timers-context";
 
 const AdvancedState = () => {
   return (
     <>
-      <Header />
-      <main>
-        <AddTimers />
-        <Timers />
-      </main>
+      <TimersContextProvider>
+        <Header />
+        <main>
+          <AddTimers />
+          <Timers />
+        </main>
+      </TimersContextProvider>
     </>
   );
 };
