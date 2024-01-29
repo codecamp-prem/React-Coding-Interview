@@ -6,7 +6,7 @@ export type BlogPost = {
 type BlogPostsProps = {
   posts: BlogPost[];
 };
-const BlogPost = ({ posts }: BlogPostsProps) => {
+const ListBlogPost = ({ posts }: BlogPostsProps) => {
   return (
     <div id="blog-posts">
       <h1>Blog Posts</h1>
@@ -22,4 +22,4 @@ const BlogPost = ({ posts }: BlogPostsProps) => {
   );
 };
 
-export default BlogPost;
+export default ListBlogPost;
