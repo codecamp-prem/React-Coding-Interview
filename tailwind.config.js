@@ -5,6 +5,7 @@ export default {
     extend: {
       gridTemplateColumns: {
         autoFit: "repeat(auto-fit, minmax(15rem, 1fr))",
+        contextUl: "repeat(auto-fit, minmax(18rem, 10rem))",
       },
     },
   },

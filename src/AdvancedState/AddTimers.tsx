@@ -2,13 +2,16 @@ import { useRef } from "react";
 import Button from "../DynamicInput/Button";
 import Form, { FormHandle } from "../DynamicInput/Form";
 import Input from "../DynamicInput/Input";
+import { useTimersContext } from "./store/timers-context";
 
 const AddTimers = () => {
   const form = useRef<FormHandle>(null);
+  const { addTimer } = useTimersContext();
 
   const handleSaveTimer = (data: unknown) => {
     const extractData = data as { name: string; duration: string };
     console.log(extractData);
+    addTimer({ name: extractData.name, duration: +extractData.duration });
     form.current?.clear();
   };
 

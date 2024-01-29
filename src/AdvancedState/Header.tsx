@@ -7,7 +7,13 @@ const Header = () => {
   return (
     <header className="flex justify-between items-center max-w-2xl mt-0 mx-auto p-2">
       <h1 className="font-bold underline">ReactTimer</h1>
-      <Button>{timerCTX.isRunning ? "Stop Timer" : "Start Timer"}</Button>
+      <Button
+        onClick={
+          timerCTX.isRunning ? timerCTX.stopTimers : timerCTX.startTimers
+        }
+      >
+        {timerCTX.isRunning ? "Stop Timer" : "Start Timer"}
+      </Button>
     </header>
   );
 };
