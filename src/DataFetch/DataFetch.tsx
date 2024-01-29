@@ -1,7 +1,9 @@
 // Data Fetch in TypeScript
 
 import { ReactNode, useEffect, useState } from "react";
+//import "../index.css";
 import ListBlogPost, { BlogPost } from "./ListBlogPost";
+import "./data-fetch.css";
 import imgDataFetching from "./data-fetching.png";
 import { get } from "./utils/http";
 

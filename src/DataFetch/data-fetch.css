@@ -1,0 +1,33 @@
+main {
+  @apply w-11/12 max-w-screen-sm my-12 mx-auto;
+}
+main > img {
+  @apply block w-32 h-32 object-contain my-8 mx-auto border border-solid border-white;
+}
+h1 {
+  @apply text-[2.5rem];
+}
+#blog-posts ul {
+  @apply list-none my-8 mx-auto p-0 grid grid-cols-autoFit gap-8;
+}
+#blog-posts li {
+  @apply p-4 rounded-lg bg-[#333];
+}
+#blog-posts h2 {
+  @apply m-0 text-[0.9rem] capitalize text-[#9c9aa0];
+}
+#blog-posts p {
+  @apply mt-4 text-[1.1rem] text-[#9f98ae] capitalize;
+}
+#loading-fallback {
+  @apply text-center text-[1.5rem] my-6 mx-auto;
+}
+#error {
+  @apply border border-solid border-[#ff0055] text-[#e6a4ba] p-4 rounded-md text-center;
+}
+#error h1 {
+  @apply m-0 text-[1.5rem];
+}
+#error p {
+  @apply m-0;
+}
