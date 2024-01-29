@@ -1,9 +1,9 @@
-import { DynamicInput } from "./DynamicInput";
+import { AdvancedState } from "./AdvancedState";
 
 function App() {
   return (
     <>
-      <DynamicInput />
+      <AdvancedState />
     </>
   );
 }
